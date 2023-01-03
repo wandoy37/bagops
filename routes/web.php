@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Home Route
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+
+// =======Menu Profile=======
+// This write code...
+
+// =======Menu Layanan=======
+// This write code...
+
+// Page Berita
+Route::get('/berita', [HomeController::class, 'berita'])->name('home.berita.index');
+// Page Contact
+Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
 
 Route::prefix('auth')->middleware(['auth'])->group(function () {
     // Dashboard
