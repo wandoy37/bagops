@@ -26,6 +26,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 // Page Berita
 Route::get('/berita', [HomeController::class, 'berita'])->name('home.berita.index');
+Route::get('/berita/{slug}', [HomeController::class, 'beritaShow'])->name('home.berita.show');
 // Page Contact
 Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
 
